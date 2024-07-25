@@ -1,52 +1,63 @@
 const express = require('express')
-const bodyParser = require('body-parser')
-const ThermalPrinter = require('node-thermal-printer').printer
-const Types = require('node-thermal-printer').types
-const cors = require('cors') // Import cors
+const {Socket} = require('net')
+const cors = require('cors')
+const {json} = require('body-parser')
 
 const app = express()
-const port = 3003
+const port = process.env.PORT || 3003
 
-app.use(cors()) // Use cors
-app.use(bodyParser.json())
+const corsOptions = {
+  credentials: true,
+  origin: ['http://localhost:4000', 'http://localhost:3000'],
+}
+app.use(cors(corsOptions))
+app.use(json())
 
-app.post('/print', async (req, res) => {
-  const {printerIp, printerPort, message} = req.body
-
-  if (!printerIp || !printerPort || !message) {
+app.post('/api/print', async (req, res) => {
+  const {ip, port, data} = req.body
+  if (!ip || !port || !data) {
     return res
       .status(400)
-      .json({error: 'Printer IP, port, and message are required'})
+      .json({success: false, message: 'Missing required fields'})
   }
 
-  // Convert the message object to a string
-  let messageString = ''
-  for (let key in message) {
-    if (message.hasOwnProperty(key)) {
-      messageString += String.fromCharCode(message[key])
-    }
+  const byteArray = Uint8Array.from(Object.values(data))
+  const client = new Socket()
+
+  if (!client) {
+    return res
+      .status(500)
+      .json({success: false, message: 'Error connecting to printer'})
   }
 
-  let printer = new ThermalPrinter({
-    type: Types.EPSON, // Replace with your printer type
-    interface: `tcp://${printerIp}:${printerPort}`,
+  client.connect(port, ip, () => {
+    console.log('Connected to printer')
+
+    client.write(byteArray, (err) => {
+      if (err) {
+        console.error('Error sending data:', err)
+        return res
+          .status(500)
+          .json({success: false, message: 'Error sending data to printer'})
+      }
+      console.log('Message sent to printer')
+      client.destroy() // close the connection
+      res.json({success: true, message: 'Message sent to printer'})
+    })
   })
 
-  let isConnected = await printer.isPrinterConnected()
-  if (!isConnected) {
-    return res.status(500).json({error: 'Printer is not connected'})
-  }
-
-  printer.print(messageString)
-
-  try {
-    await printer.execute()
-    res.status(200).json({message: 'Printed successfully'})
-  } catch (error) {
-    res.status(500).json({error: 'Failed to print', details: error.message})
-  }
+  client.on('error', (err) => {
+    console.error('Error connecting to printer:', err)
+    res.status(500).json({
+      success: false,
+      message: 'Error connecting to printer',
+      error: err.message,
+    })
+  })
 })
 
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`)
+  console.log(`Server running at http://localhost:${port}`)
 })
+
+module.exports = app

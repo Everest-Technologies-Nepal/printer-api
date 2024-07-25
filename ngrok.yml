@@ -1,0 +1,7 @@
+version: "2"
+authtoken: 2jjQDpJmhKvFACOdLAVezclKJjQ_7GPMeDEXZ4ALn3DZXwzDy
+tunnels:
+  web: 
+    proto: http
+    addr: 3003
+    domain: https://proven-magical-goldfish.ngrok-free.app

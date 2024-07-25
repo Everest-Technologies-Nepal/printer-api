@@ -1,0 +1,8 @@
+t=2024-07-25T18:10:08+0545 lvl=info msg="no configuration paths supplied"
+t=2024-07-25T18:10:08+0545 lvl=info msg="using configuration at default config path" path=C:\\Users\\acer\\AppData\\Local/ngrok/ngrok.yml
+t=2024-07-25T18:10:08+0545 lvl=info msg="open config file" path=C:\\Users\\acer\\AppData\\Local\\ngrok\\ngrok.yml err=nil
+t=2024-07-25T18:10:08+0545 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2024-07-25T18:10:08+0545 lvl=info msg="client session established" obj=tunnels.session obj=csess id=250d1e5ee18d
+t=2024-07-25T18:10:08+0545 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2024-07-25T18:10:08+0545 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:3003 url=https://proven-magical-goldfish.ngrok-free.app
+t=2024-07-25T18:10:09+0545 lvl=info msg="update available" obj=updater
