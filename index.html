@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiFi Printer Setup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-top: 0;
+        }
+        pre {
+            background: #eee;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Setting Up WiFi Printer</h1>
+        <p>Follow these steps to set up your WiFi printer:</p>
+        <ol>
+            <li><a href="https://github.com/Everest-Technologies-Nepal/printer-api/archive/refs/heads/main.zip">Download the code</a> from the provided link.</li>
+            <li>Install Node.js from <a href="https://nodejs.org/">Node.js official website</a>.</li>
+            <li>Set up and run the server on startup:</li>
+            <pre>
+npm install pm2 -g
+npm install pm2-windows-startup -g
+pm2-startup install
+pm2 start ecosystem.config.js
+            </pre>
+            <li>Start ngrok:</li>
+            <pre>
+ngrok http 3003 --domain=proven-magical-goldfish.ngrok-free.app --log=stdout > ngrok.log &
+            </pre>
+            <li>To stop ngrok server running in the background, run the following command in PowerShell:</li>
+            <pre>
+Stop-Process -Name ngrok -Force
+            </pre>
+        </ol>
+        <p>This guide will help you set up and run your WiFi printer server easily. If you have any issues, feel free to ask for help!</p>
+    </div>
+</body>
+</html>
