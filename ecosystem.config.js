@@ -8,7 +8,7 @@ module.exports = {
       },
     },
     {
-      name: 'script-runner',
+      name: 'script-runners',
       script: './run_scripts.js',
       watch: false,
     },

@@ -1,8 +1,20 @@
-t=2024-07-25T18:10:08+0545 lvl=info msg="no configuration paths supplied"
-t=2024-07-25T18:10:08+0545 lvl=info msg="using configuration at default config path" path=C:\\Users\\acer\\AppData\\Local/ngrok/ngrok.yml
-t=2024-07-25T18:10:08+0545 lvl=info msg="open config file" path=C:\\Users\\acer\\AppData\\Local\\ngrok\\ngrok.yml err=nil
-t=2024-07-25T18:10:08+0545 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
-t=2024-07-25T18:10:08+0545 lvl=info msg="client session established" obj=tunnels.session obj=csess id=250d1e5ee18d
-t=2024-07-25T18:10:08+0545 lvl=info msg="tunnel session started" obj=tunnels.session
-t=2024-07-25T18:10:08+0545 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:3003 url=https://proven-magical-goldfish.ngrok-free.app
-t=2024-07-25T18:10:09+0545 lvl=info msg="update available" obj=updater
+t=2024-07-26T14:07:51+0545 lvl=info msg="no configuration paths supplied"
+t=2024-07-26T14:07:51+0545 lvl=info msg="using configuration at default config path" path=C:\\Users\\acer\\AppData\\Local/ngrok/ngrok.yml
+t=2024-07-26T14:07:51+0545 lvl=info msg="open config file" path=C:\\Users\\acer\\AppData\\Local\\ngrok\\ngrok.yml err=nil
+t=2024-07-26T14:07:51+0545 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2024-07-26T14:07:51+0545 lvl=info msg="client session established" obj=tunnels.session obj=csess id=a1bce44d4597
+t=2024-07-26T14:07:51+0545 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2024-07-26T14:07:51+0545 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:3003 url=https://proven-magical-goldfish.ngrok-free.app
+t=2024-07-26T14:07:52+0545 lvl=info msg="update available" obj=updater
+t=2024-07-26T14:07:58+0545 lvl=info msg=start pg=/static/js/vendor.7bf8482babd17af89276.js id=af950d8c7ac1cbce
+t=2024-07-26T14:07:58+0545 lvl=info msg=start pg=/static/js/rpx.b4abcaa32b3f3df2f79e.js id=6cab69c08efb1572
+t=2024-07-26T14:07:58+0545 lvl=info msg=start pg=/static/css/app.24f4d6ebe36a4013216e.css id=6dbeb8f511446749
+t=2024-07-26T14:07:58+0545 lvl=info msg=start pg=/static/js/app.421e8ddd9f16f84ac523.js id=825d6d7354776758
+t=2024-07-26T14:07:58+0545 lvl=info msg=end pg=/static/js/rpx.b4abcaa32b3f3df2f79e.js id=6cab69c08efb1572 status=200 dur=130.9466ms
+t=2024-07-26T14:07:58+0545 lvl=info msg=end pg=/static/js/app.421e8ddd9f16f84ac523.js id=825d6d7354776758 status=200 dur=130.9439ms
+t=2024-07-26T14:07:58+0545 lvl=info msg=end pg=/static/css/app.24f4d6ebe36a4013216e.css id=6dbeb8f511446749 status=200 dur=132.1698ms
+t=2024-07-26T14:07:58+0545 lvl=info msg=end pg=/static/js/vendor.7bf8482babd17af89276.js id=af950d8c7ac1cbce status=200 dur=146.6379ms
+t=2024-07-26T14:07:58+0545 lvl=info msg=start pg=/grpc/agent.Web/Preloaded id=17611393dfd21ce9
+t=2024-07-26T14:07:58+0545 lvl=info msg=start pg=/grpc/agent.Web/State id=3b360da42471ba5d
+t=2024-07-26T14:07:58+0545 lvl=info msg=end pg=/grpc/agent.Web/Preloaded id=17611393dfd21ce9 status=200 dur=4.2228ms
+t=2024-07-26T14:08:51+0545 lvl=info msg="join connections" obj=join id=758e98067e21 l=[::1]:3003 r=49.244.57.9:50025
