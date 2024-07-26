@@ -8,7 +8,7 @@ const port = process.env.PORT || 3003
 
 const corsOptions = {
   credentials: true,
-  origin: ['http://localhost:4000', 'http://localhost:3000'],
+  origin: '*',
 }
 app.use(cors(corsOptions))
 app.use(json())
